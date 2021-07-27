@@ -1,0 +1,16 @@
+{
+  "default": {
+    "neural_cotraining": "323f045084b7003d95d639cf265ef59ea5261767",
+    "nnfabrik": "390c37d72cebe0663c4492fceec5c799576e1b5f",
+    "nnvision": "5d7f3dc5fa365c96166596f86a9b150def5c6633",
+    "neuralpredictors": "62198a91fb07466709c7df221628fd545a5f7f71",
+    "nntransfer": "62198a91fb07466709c7df221628fd545a5f7f71"
+  },
+  "test": {
+    "neural_cotraining": "a2494229f2e00d7bcab61be987805e4f683c35ae",
+    "nnfabrik": "390c37d72cebe0663c4492fceec5c799576e1b5f",
+    "nnvision": "bc62ed2b21ec5e395d2671c0b39488c69abe1954",
+    "neuralpredictors": "36a2857ff19f6dcc47fb1a8af4a5d7c6cfffed92",
+    "nntransfer": "62198a91fb07466709c7df221628fd545a5f7f71"
+  }
+}

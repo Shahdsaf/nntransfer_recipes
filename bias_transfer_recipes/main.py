@@ -15,6 +15,7 @@ from importlib import reload
 from pathlib import Path
 from filelock import Timeout, FileLock
 
+projects_folder = "nips_projects"
 
 def work_path(sub_path=""):
     scratch = os.environ.get("SCRATCH")
@@ -22,15 +23,15 @@ def work_path(sub_path=""):
         path = os.path.join(scratch, "work", sub_path)
     else:
         home_path = Path.home()
-        path = os.path.join(home_path, "projects/bias_transfer_recipes/work", sub_path)
+        path = os.path.join(home_path, projects_folder, "/work", sub_path)
     path = Path(path)
     path.mkdir(parents=True, exist_ok=True)
     return path
 
 
 def src_path(sub_path=""):
-    home_path = Path.home()
-    return os.path.join(home_path, "projects/", sub_path)
+    #home_path = Path.home()
+    return "/src" #os.path.join(home_path, projects_folder, sub_path)
 
 
 def fill_tables(configs: dict):
@@ -159,13 +160,11 @@ def load_experiment(
         recipe = sorted(sub_dirs)[0]
     if dev_mode:
         for repo in (
-            "bias_transfer",
+            "neural_cotraining",
             "nntransfer",
-            "nnplayground",
             "neuralpredictors",
             "nnfabrik",
             "nnvision",
-            "pytorch_warmup",
         ):
             checkout_and_install(repo, "", dev_mode=True)
     else:
@@ -174,13 +173,11 @@ def load_experiment(
         experiment_commits = commits_dict.get(experiment, {})
         default_commits = commits_dict.get("default", {})
         for repo in (
-            "bias_transfer",
+            "neural_cotraining",
             "nntransfer",
-            "nnplayground",
             "neuralpredictors",
             "nnfabrik",
             "nnvision",
-            "pytorch_warmup",
         ):
             commit_hash = experiment_commits.get(repo, default_commits.get(repo))
             if not commit_hash:
@@ -189,7 +186,7 @@ def load_experiment(
 
     import datajoint as dj
 
-    dj.config["database.host"] = os.environ["DJ_HOST"]
+    dj.config["database.host"] = "134.2.168.16" #os.environ["DJ_HOST"]
     dj.config["database.user"] = os.environ["DJ_USER"]
     dj.config["database.password"] = os.environ["DJ_PASS"]
     dj.config["enable_python_native_blobs"] = True

@@ -9,11 +9,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     env_file: .env
     working_dir: /recipes/
@@ -27,11 +24,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     working_dir: /recipes/
     ports:
@@ -46,11 +40,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     working_dir: /recipes/
     env_file: .env
@@ -69,11 +60,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     env_file: .env
     environment:
@@ -92,11 +80,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     working_dir: /recipes/
     env_file: .env
@@ -112,11 +97,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     env_file: .env
     runtime: nvidia
@@ -134,11 +116,8 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../pytorch_warmup:/src/pytorch_warmup
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     env_file: .env
     runtime: nvidia
@@ -156,15 +135,13 @@ services:
       - ../neuralpredictors:/src/neuralpredictors
       - ../nnfabrik:/src/nnfabrik
       - ../nnvision:/src/nnvision
-      - ../bias_transfer:/src/bias_transfer
-      - ../nndichromacy:/src/nndichromacy
-      - ../data_port:/src/data_port
-      - ../mei:/src/mei
+      - ../neural_cotraining:/src/neural_cotraining
+      - ../nntransfer:/src/nntransfer
       - /tmp/djcache:/cache
     env_file: .env
     runtime: nvidia
     entrypoint: ""
-    working_dir: /src/bias_transfer/bias_transfer
+    working_dir: /src/neural_cotraining/neural_cotraining
     command: ./run_tests.sh
     ipc: host
     shm_size: 40g
