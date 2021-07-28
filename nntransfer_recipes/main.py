@@ -147,7 +147,7 @@ def load_experiment(
     recipe,
     experiment,
     schema=None,
-    base_dir="./bias_transfer_recipes",
+    base_dir="./nntransfer_recipes",
     import_prefix="",
     dev_mode=False,
 ):
