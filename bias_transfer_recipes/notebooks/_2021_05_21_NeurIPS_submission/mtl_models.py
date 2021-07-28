@@ -9,7 +9,8 @@ transfer_experiments = {}
 
 
 #MTL on image classification and neural prediction. This experiment can reproduce MTL=Monkey, MTL-Oracle and MTL-Shuffled
-#given the corresponding neural_dataset_folder_name
+#given the corresponding neural_dataset_folder_name.
+neural_dataset_folder_name = "mtl_monkey_dataset"  #"mtl_shuffled_dataset", "mtl_oracle_dataset"
 
 restore_best = True
 to_monitor = ['img_classification']
@@ -31,7 +32,7 @@ for seed in seeds:
     model_name = 'VGG19bn_MTL_classificationReadout_Conv_V1ReadoutLayer_{}_gamma_{}'.format(layer, 0.5)
     trainer_name = "opt_{}_lr_{}_decay_0.3_trainCycler_{}_lossWeighing_{}_batchRatio_{}".format(opt, lr, train_cycler, loss_weighing, ratio)
     experiments[Description(name=dataset_name + "_" + model_name + "_" + trainer_name, seed=seed)] = TransferExperiment([Experiment(
-        dataset=dataset.MTLDatasetsConfig(comment=dataset_name, neural_dataset_dict={"comment": "", "dataset":"neural_dataset_folder_name",
+        dataset=dataset.MTLDatasetsConfig(comment=dataset_name, neural_dataset_dict={"comment": "", "dataset":neural_dataset_folder_name,
                                                                                      "scale": 1.0,
                                                                                      "crop": 0, "seed":1000, "subsample": 1,
                                                                                      "target_types" : ['v1'], "normalize" : True,
